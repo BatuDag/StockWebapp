@@ -14,7 +14,6 @@ public class StockService {
     private String apiUrl;
 
     public String getStockData(String symbol) {
-        // URL für Marketstack API
         String url = apiUrl + "/eod?access_key=" + apiKey + "&symbols=" + symbol;
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(url, String.class);
